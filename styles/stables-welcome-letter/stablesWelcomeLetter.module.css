@@ -1,0 +1,71 @@
+.container {
+    text-align: center;
+    color: #745742;
+    background-color: #8d6b5324;
+    border-radius: 15px;
+    margin: auto;
+    padding: 1rem;
+    width: 70%;
+}
+
+.container h2 {
+    font-size: 2rem;
+    margin: 0.5rem;
+}
+
+.container p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.5rem;
+}
+
+.listContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
+}
+
+.listContainer ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+}
+
+.arrow {
+    cursor: pointer;
+    transition: transform 0.7s ease, scale 0.3s ease;
+    /* Smooth rotation and scaling */
+}
+
+.arrow:hover {
+    transform: scale(1.2);
+    /* Slightly enlarge the image on hover */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    /* Optional shadow for pop-up effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.arrow:active {
+    transform: scale(1.1) rotate(360deg);
+
+    /* Slightly shrink on click */
+}
+
+.collapsed .arrow {
+    transform: rotate(360deg);
+}
+
+.collapsibleContent {
+    height: auto;
+    /* Initial state for content */
+    overflow: hidden;
+    transition: height 0.7s ease;
+    /* Smooth height change */
+}
+
+.collapsed {
+    height: 0;
+    /* When collapsed */
+}
