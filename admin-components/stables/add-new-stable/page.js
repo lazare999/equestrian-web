@@ -1,135 +1,130 @@
 "use client";
 
 import { useState } from "react";
-import { addStableWithImages } from '../actions/stable-actions/stableActions';
+import { addStableWithImages } from "../actions/stable-actions/stableActions";
 import Dropzone from "../add-images/page";
-import classes from "../../../styles/admin/admin-add-new-stable/addNewStables.module.css";
+import classes from "@/styles/admin/admin-add-new-stable/addNewStables.module.css";
 
 export default function AddNewStable() {
-    const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
+    stableName: "",
+    address: "",
+    phoneNumber: "",
+    description: "",
+    stable_logo: "",
+    stable_images: [],
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+  console.log(formData);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleLogoChange = (acceptedFiles) => {
+    console.log("Accepted logo: ", acceptedFiles);
+    setFormData((prevState) => ({
+      ...prevState,
+      stable_logo: acceptedFiles,
+    }));
+  };
+
+  const handleImagesChange = (acceptedFiles) => {
+    console.log("Accepted images: ", acceptedFiles);
+    setFormData((prevState) => ({
+      ...prevState,
+      stable_images: acceptedFiles,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      await addStableWithImages(formData);
+      setSuccess(true);
+      setFormData({
         stableName: "",
         address: "",
         phoneNumber: "",
         description: "",
-        stable_logo: '',
+        stable_logo: "",
         stable_images: [],
-    });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [error, setError] = useState(null);
-    const [success, setSuccess] = useState(false);
-    console.log(formData)
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevState) => ({ ...prevState, [name]: value }));
-    };
+      });
+    } catch (err) {
+      setError(err.message || "An error occurred.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-    const handleLogoChange = (acceptedFiles) => {
-        console.log("Accepted logo: ", acceptedFiles);
-        setFormData((prevState) => ({
-            ...prevState,
-            stable_logo: acceptedFiles,
-        }));
-    };
-
-    const handleImagesChange = (acceptedFiles) => {
-        console.log("Accepted images: ", acceptedFiles);
-        setFormData((prevState) => ({
-            ...prevState,
-            stable_images: acceptedFiles,
-        }));
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setError(null);
-        setSuccess(false);
-
-        try {
-
-            await addStableWithImages(formData);
-            setSuccess(true);
-            setFormData({
-                stableName: "",
-                address: "",
-                phoneNumber: "",
-                description: "",
-                stable_logo: '',
-                stable_images: [],
-            });
-        } catch (err) {
-            setError(err.message || "An error occurred.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
-    return (
-        <div className={classes.container}>
-            <h1 className={classes.title}>დაამატე თავლა</h1>
-            {error && <p className={classes.error}>{error}</p>}
-            {success && <p className={classes.success}>Stable added successfully!</p>}
-            <form className={classes.form} onSubmit={handleSubmit}>
-                <div className={classes.formContainer}>
-                    <div className={classes.firsFormDiv}>
-                        <label htmlFor="stableName">თავლის სახელი</label>
-                        <input
-                            type="text"
-                            name="stableName"
-                            value={formData.stableName}
-                            onChange={handleChange}
-                            required
-                        />
-                        <label htmlFor="address">მისამართი</label>
-                        <input
-                            type="text"
-                            name="address"
-                            value={formData.address}
-                            onChange={handleChange}
-                            required
-                        />
-                        <label htmlFor="phoneNumber">ტელეფონის ნომერი</label>
-                        <input
-                            type="number"
-                            name="phoneNumber"
-                            value={formData.phoneNumber}
-                            onChange={handleChange}
-                            required
-                            placeholder="+995"
-                        />
-                    </div>
-                    <div className={classes.secondFormDiv}>
-                        <label htmlFor="description">სრული აღწერა</label>
-                        <textarea
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                </div>
-                <Dropzone
-                    label="Choose Stable Logo"
-                    name="stable_logo"
-                    required={true}
-                    onDrop={handleLogoChange}
-                />
-                <Dropzone
-                    label="Choose Stable Images"
-                    name="stable_images"
-                    required={false}
-                    onDrop={handleImagesChange}
-                />
-                <div className={classes.buttonContainer}>
-                    <button
-                        type="submit"
-                        className={classes.submitButton}
-                        disabled={isSubmitting}
-                    >
-                        {isSubmitting ? "Adding..." : "დამატება"}
-                    </button>
-                </div>
-            </form>
+  return (
+    <div className={classes.container}>
+      <h1 className={classes.title}>დაამატე თავლა</h1>
+      {error && <p className={classes.error}>{error}</p>}
+      {success && <p className={classes.success}>Stable added successfully!</p>}
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <div className={classes.formContainer}>
+          <div className={classes.firsFormDiv}>
+            <label htmlFor="stableName">თავლის სახელი</label>
+            <input
+              type="text"
+              name="stableName"
+              value={formData.stableName}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="address">მისამართი</label>
+            <input
+              type="text"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="phoneNumber">ტელეფონის ნომერი</label>
+            <input
+              type="number"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+              placeholder="+995"
+            />
+          </div>
+          <div className={classes.secondFormDiv}>
+            <label htmlFor="description">სრული აღწერა</label>
+            <textarea
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              required
+            />
+          </div>
         </div>
-    );
+        <Dropzone
+          label="Choose Stable Logo"
+          name="stable_logo"
+          required={true}
+          onDrop={handleLogoChange}
+        />
+        <Dropzone
+          label="Choose Stable Images"
+          name="stable_images"
+          required={false}
+          onDrop={handleImagesChange}
+        />
+        <div className={classes.buttonContainer}>
+          <button type="submit" className={classes.submitButton} disabled={isSubmitting}>
+            {isSubmitting ? "Adding..." : "დამატება"}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
