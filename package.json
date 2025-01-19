@@ -9,20 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@edgestore/react": "^0.2.2",
-    "@react-google-maps/api": "^2.20.5",
-    "@uploadthing/react": "^7.1.5",
     "appwrite": "^14.0.1",
     "embla-carousel-react": "^8.5.1",
-    "firebase": "^11.1.0",
-    "lucide-react": "^0.469.0",
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-dropzone": "^14.3.5",
-    "tailwind-merge": "^2.6.0",
-    "uploadthing": "^7.4.4",
-    "uuid": "^11.0.3"
+    "react-dropzone": "^14.3.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
