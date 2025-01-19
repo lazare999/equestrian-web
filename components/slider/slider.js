@@ -6,17 +6,7 @@ import { NextButton, PrevButton, usePrevNextButtons } from "./sliderButtons";
 
 import classes from "@/styles/slider/slider.module.css";
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  }).format(date); // This will format as '25 Dec 2024'
-};
-
-const Slider = (props) => {
-  const { slides, options } = props;
+const Slider = ({ children, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -38,17 +28,7 @@ const Slider = (props) => {
   return (
     <div className={classes.embla}>
       <div className={classes.embla__viewport} ref={emblaRef}>
-        <div className={classes.embla__container}>
-          {slides.map((slide, index) => (
-            <div className={classes.embla__slide} key={slide.event_id || index}>
-              <div className={classes.embla__slide__number}>
-                <p className={classes.date}>{formatDate(slide.date)}</p>
-                <img src={slide.img} alt="event image" className={classes.img} />
-                <h2 className={classes.title}>{slide.name}</h2>
-              </div>
-            </div>
-          ))}
-        </div>
+        <div className={classes.embla__container}>{children}</div>
       </div>
 
       <div className={classes.embla__controls}>

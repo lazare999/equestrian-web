@@ -17,7 +17,7 @@ export default function AddNewStable() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  console.log(formData);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -28,6 +28,13 @@ export default function AddNewStable() {
     setFormData((prevState) => ({
       ...prevState,
       stable_logo: acceptedFiles,
+    }));
+  };
+
+  const handleCoverChange = (acceptedFiles) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      stable_cover: acceptedFiles, // Handle stable cover
     }));
   };
 
@@ -112,6 +119,12 @@ export default function AddNewStable() {
           name="stable_logo"
           required={true}
           onDrop={handleLogoChange}
+        />
+        <Dropzone
+          label="Choose Stable Cover"
+          name="stable_cover" // New Dropzone for stable cover
+          required={true}
+          onDrop={handleCoverChange}
         />
         <Dropzone
           label="Choose Stable Images"

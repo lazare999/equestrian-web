@@ -8,7 +8,7 @@ import arrow2 from "@/public/arrow-images/arrow2.png";
 import classes from "@/styles/stables-welcome-letter/stablesWelcomeLetter.module.css";
 
 export default function StablesWelcomeLetter() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const contentRef = useRef(null);
 
   const toggleContent = () => {

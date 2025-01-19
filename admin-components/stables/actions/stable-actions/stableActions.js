@@ -6,37 +6,36 @@ export async function addStableWithImages(formData) {
     // Upload stable logo and get its URL
     const stableLogoUrl = await uploadFile(formData.stable_logo[0], "stable_logo");
 
+    // Upload stable cover and get its URL
+    const stableCoverUrl = await uploadFile(formData.stable_cover[0], "stable_cover");
+
     // Upload stable images and get their URLs
     const stableImageUrls = await Promise.all(
       formData.stable_images.map((image) => uploadFile(image, "stable_images"))
     );
 
-    // Convert the array of URLs to a JSON string
     const stableImageUrlsString = JSON.stringify(stableImageUrls);
 
-    // Prepare the stable data, including the stable logo URL and image URLs
+    // Prepare the stable data
     const stableData = {
       stableName: formData.stableName,
       address: formData.address,
       phoneNumber: formData.phoneNumber,
       description: formData.description,
-      stable_logo: stableLogoUrl, // Reference to the stable logo URL
-      stable_images: stableImageUrlsString, // Store URLs as a JSON string
+      stable_logo: stableLogoUrl,
+      stable_cover: stableCoverUrl, // Add stable cover URL
+      stable_images: stableImageUrlsString,
     };
 
-    // Create the stable document in the database
+    // Create the stable document
     const response = await databases.createDocument(
-      "equestrian-data", // Database ID
-      "stables", // Collection ID
-      ID.unique(), // Unique document ID
+      "equestrian-data",
+      "stables",
+      ID.unique(),
       stableData
     );
 
-    return {
-      $id: response.$id,
-      $createdAt: response.$createdAt,
-      ...response,
-    };
+    return response;
   } catch (error) {
     console.error("Error adding stable:", error);
     throw new Error("Failed to add stable. Please try again.");

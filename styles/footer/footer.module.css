@@ -1,38 +1,38 @@
 .footer {
-    background-color: #ad8f77;
-    /* Dark background */
-    color: #fff;
-    /* White text */
-    padding: 2rem 1rem;
-    text-align: center;
+  background-color: #ad8f77;
+  /* Dark background */
+  color: #fff;
+  /* White text */
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .content {
-    max-width: 1200px;
-    margin: 0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .links {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .links li {
-    margin: 0;
+  margin: 0;
 }
 
 .links a {
-    text-decoration: none;
-    color: #0070f3;
-    /* Accent color */
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #0070f3;
+  /* Accent color */
+  transition: color 0.3s ease;
 }
 
 .links a:hover {
-    color: #00c4ff;
-    /* Hover color */
+  color: #00c4ff;
+  /* Hover color */
 }

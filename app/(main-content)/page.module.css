@@ -6,7 +6,7 @@
 
 .sliderContainer {
   height: 100vh;
-  background-image: url('/shalva1.jpg');
+  background-image: url("/homePageCover.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -15,7 +15,6 @@
   align-items: center;
   text-align: center;
   color: antiquewhite;
-
 }
 
 .sliderContainer h1 {
@@ -52,7 +51,6 @@
 }
 
 .welcomeLetterContainer h1 {
-
   font-size: 3rem;
   margin: 20px;
 }
@@ -62,7 +60,6 @@
   font-size: 1.7rem;
   line-height: 2rem;
 }
-
 
 /* src/components/header/Header.module.css */
 .header {
@@ -94,7 +91,9 @@
   text-decoration: none;
   color: #ad8f77;
   font-size: 1.5rem;
-  transition: color 0.3s ease, font-weight 0.3s ease;
+  transition:
+    color 0.3s ease,
+    font-weight 0.3s ease;
 }
 
 .navItem a:hover {
@@ -121,7 +120,7 @@
 }
 
 .nav ul li a:hover {
-  color: #FF0000;
+  color: #ff0000;
   /* Accent color */
 }
 
@@ -177,7 +176,6 @@
   /* Hover color */
 }
 
-
 /* rules page styles */
 
 .rulesContainer {
@@ -185,7 +183,6 @@
   background-color: #f5d4b88f;
   display: flex;
   border-radius: 10px;
-
 }
 
 .rulesContainer img {

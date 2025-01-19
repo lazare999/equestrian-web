@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@edgestore/react": "^0.2.2",
+    "@react-google-maps/api": "^2.20.5",
     "@uploadthing/react": "^7.1.5",
     "appwrite": "^14.0.1",
     "embla-carousel-react": "^8.5.1",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "eslint": "^9",
-    "eslint-config-next": "15.1.0"
+    "eslint-config-next": "15.1.0",
+    "prettier": "^3.4.2"
   }
 }

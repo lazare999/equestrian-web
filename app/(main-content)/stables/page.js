@@ -6,7 +6,7 @@ import classes from "@/styles/stablesPage/stablesPage.module.css";
 export default function StablesPage() {
   return (
     <div className={classes.container}>
-      <h1>თავლები </h1>
+      <h1>თავლები</h1>
       <StablesWelcomeLetter />
       <StablesList />
     </div>

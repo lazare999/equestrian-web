@@ -1,29 +1,29 @@
 /* Admin Dashboard Styles */
 .container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .heading {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
 .link {
-    display: inline-block;
-    margin-top: 10px;
-    color: #0070f3;
-    text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  color: #0070f3;
+  text-decoration: none;
 }
 
 .link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
