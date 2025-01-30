@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
 
 import phone from "@/public/contacts-images/smartphone.png";
 import email from "@/public/contacts-images/email.png";
@@ -6,7 +7,9 @@ import facebook from "@/public/contacts-images/facebook.png";
 
 import classes from "@/styles/stable-address/stableAddress.module.css";
 
-export default function StableAddress() {
+export default async function StableAddress({ id }) {
+  const stables = await getStables();
+  const stable = stables.find((s) => s.$id === id);
   return (
     <div className={classes.address}>
       <h1>მისამართი და საკონტაქტო</h1>
@@ -14,15 +17,15 @@ export default function StableAddress() {
         <div className={classes.contactInfoContainer}>
           <div className={classes.contactInfo}>
             <Image src={phone} width={50} alt="phone icon" />
-            <p>555 999 572</p>
+            <p>{stable.phoneNumber}</p>
           </div>
           <div className={classes.contactInfo}>
             <Image src={email} width={50} alt="emial icon" />
-            <p>stableContact@gmail.com</p>
+            <p>{stable.email}</p>
           </div>
           <div className={classes.contactInfo}>
             <Image src={facebook} width={50} alt="facebook icon" />
-            <p>facebook.com/stable</p>
+            <p>{stable.facebook}</p>
           </div>
         </div>
         <div className={classes.addressContainer}>

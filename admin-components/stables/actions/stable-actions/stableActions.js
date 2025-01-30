@@ -21,9 +21,15 @@ export async function addStableWithImages(formData) {
       stableName: formData.stableName,
       address: formData.address,
       phoneNumber: formData.phoneNumber,
+      facebook: formData.facebook,
+      email: formData.email,
       description: formData.description,
+      horseRide: formData.horseRide,
+      trainerSession: formData.trainerSession,
+      photoSession: formData.photoSession,
+      ponyRide: formData.ponyRide,
       stable_logo: stableLogoUrl,
-      stable_cover: stableCoverUrl, // Add stable cover URL
+      stable_cover: stableCoverUrl,
       stable_images: stableImageUrlsString,
     };
 

@@ -25,8 +25,8 @@ export default async function StableDetailsPage({ params }) {
       <h1 className={classes.aboutStable}>თავლის შესახებ</h1>
       <StableDescription id={id} />
       <div className={classes.priecesAndAddressContainer}>
-        <StablePrices />
-        <StableAddress />
+        <StablePrices id={id} />
+        <StableAddress id={id} />
       </div>
       <h1 className={classes.imagesTitle}>ფოტოები</h1>
       <StableImages id={id} />

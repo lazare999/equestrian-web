@@ -3,21 +3,32 @@
 import { useState } from "react";
 import { addStableWithImages } from "../actions/stable-actions/stableActions";
 import Dropzone from "../add-images/page";
+
+import Prices from "./add-prices/page";
+
 import classes from "@/styles/admin/admin-add-new-stable/addNewStables.module.css";
+import AddPrices from "./add-prices/page";
+import AddContactInfo from "./add-contact-info/page";
 
 export default function AddNewStable() {
   const [formData, setFormData] = useState({
     stableName: "",
     address: "",
     phoneNumber: "",
+    facebook: "",
+    email: "",
     description: "",
     stable_logo: "",
     stable_images: [],
+    horseRide: "", // Price fields
+    trainerSession: "",
+    ponyRide: "",
+    photoSession: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
+  console.log(formData);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -59,9 +70,15 @@ export default function AddNewStable() {
         stableName: "",
         address: "",
         phoneNumber: "",
+        facebook: "",
+        email: "",
         description: "",
         stable_logo: "",
         stable_images: [],
+        horseRide: "", // Price fields
+        trainerSession: "",
+        ponyRide: "",
+        photoSession: "",
       });
     } catch (err) {
       setError(err.message || "An error occurred.");
@@ -94,7 +111,7 @@ export default function AddNewStable() {
               onChange={handleChange}
               required
             />
-            <label htmlFor="phoneNumber">ტელეფონის ნომერი</label>
+            {/* <label htmlFor="phoneNumber">ტელეფონის ნომერი</label>
             <input
               type="number"
               name="phoneNumber"
@@ -102,7 +119,9 @@ export default function AddNewStable() {
               onChange={handleChange}
               required
               placeholder="+995"
-            />
+            /> */}
+            <AddPrices formData={formData} handleChange={handleChange} />
+            <AddContactInfo formData={formData} handleChange={handleChange} />
           </div>
           <div className={classes.secondFormDiv}>
             <label htmlFor="description">სრული აღწერა</label>

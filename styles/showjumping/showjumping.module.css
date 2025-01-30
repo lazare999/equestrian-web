@@ -16,10 +16,26 @@
 }
 
 .introductionContainer p {
-  margin: 2rem;
+  margin: 1rem 0;
   /* line-height: 1rem; */
   font-size: 2rem;
   color: #ad8f77;
+}
+
+.introductionText h3 {
+  font-size: 2rem;
+  color: #745742;
+}
+
+.introductionText ul {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  color: #ad8f77;
+}
+
+.introductionText span {
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 .embla__slide {
