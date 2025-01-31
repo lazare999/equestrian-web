@@ -1,0 +1,110 @@
+.container {
+  text-align: center;
+  color: #745742;
+  background-color: #8d6b5324;
+  border-radius: 15px;
+  margin: auto;
+  padding: 1rem;
+  width: 70%;
+}
+
+.container h2 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.container p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.listContainer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  cursor: pointer;
+  transition:
+    transform 0.7s ease,
+    scale 0.3s ease;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.arrow:active {
+  transform: scale(1.1) rotate(360deg);
+}
+
+.collapsed .arrow {
+  transform: rotate(360deg);
+}
+
+.collapsibleContent {
+  height: auto;
+  overflow: hidden;
+  transition: height 0.7s ease;
+}
+
+.collapsed {
+  height: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .container h2 {
+    font-size: 1.8rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .listContainer ul {
+    font-size: 1rem;
+  }
+
+  .arrow {
+    width: 25px; /* Adjust arrow size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 0.8rem;
+  }
+
+  .container h2 {
+    font-size: 1rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+  }
+
+  .listContainer ul {
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    width: 20px; /* Further reduce arrow size for small screens */
+  }
+}

@@ -1,0 +1,29 @@
+.container {
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 5rem;
+  color: #776246;
+  margin: 1.9rem;
+}
+
+.imgAndDescriptionContainer {
+  display: flex;
+}
+
+.image {
+  width: 400px;
+  height: max-content;
+}
+
+.description {
+  font-size: 2rem;
+  text-align: -webkit-auto;
+  margin: 1rem;
+  line-height: 1.6;
+  max-width: fit-content;
+}

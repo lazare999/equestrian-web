@@ -1,0 +1,46 @@
+.aboutStable {
+  text-align: center;
+  font-size: 5rem;
+  color: #776246;
+  margin: 1.9rem;
+}
+
+.priecesAndAddressContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.imagesTitle {
+  text-align: center;
+  font-size: 5rem;
+  color: #776246;
+  margin: 1.9rem;
+}
+
+@media (max-width: 768px) {
+  .aboutStable,
+  .imagesTitle {
+    font-size: 4rem;
+    margin: 1.5rem;
+  }
+
+  .priecesAndAddressContainer {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutStable,
+  .imagesTitle {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
+  .priecesAndAddressContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

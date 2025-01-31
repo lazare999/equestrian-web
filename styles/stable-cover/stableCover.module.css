@@ -1,0 +1,47 @@
+.coverContaienr {
+  position: relative;
+  text-align: center;
+}
+
+.stableCover {
+  height: calc(100vh - 113px);
+  width: 100%;
+}
+
+.stableName {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 1rem;
+  font-size: 5rem;
+  width: max-content;
+  color: antiquewhite;
+  background-color: #74574266;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .stableCover {
+    height: auto;
+    width: 100%;
+  }
+
+  .stableName {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stableCover {
+    height: auto;
+    width: 100%;
+  }
+
+  .stableName {
+    font-size: 1.5rem;
+    top: 15%;
+  }
+}
