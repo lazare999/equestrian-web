@@ -1,0 +1,307 @@
+{
+  "events": [
+    {
+      "name": "Winter Showjumping Classic",
+      "type": "CSI2* Competition",
+      "date": "2024-12-25",
+      "time": "09:00 AM",
+      "image": "/events/event-1.jpg",
+      "location": {
+        "venue": "Equestrian Arena",
+        "address": "123 Horse Lane, Georgia, USA",
+        "map": "https://maps.example.com/location"
+      },
+      "overview": "Join us for an exciting day of showjumping at the Winter Showjumping Classic! Watch top riders compete in challenging courses.",
+      "schedule": [
+        {
+          "time": "09:00 AM",
+          "activity": "Warm-up Session"
+        },
+        {
+          "time": "10:00 AM",
+          "activity": "Round 1 - Junior Class"
+        },
+        {
+          "time": "12:00 PM",
+          "activity": "Lunch Break"
+        },
+        {
+          "time": "01:00 PM",
+          "activity": "Round 2 - Amateur Class"
+        },
+        {
+          "time": "03:00 PM",
+          "activity": "Round 3 - Professional Class"
+        },
+        {
+          "time": "05:00 PM",
+          "activity": "Prize Ceremony"
+        }
+      ],
+      "competition_details": {
+        "classes": [
+          {
+            "name": "Junior Class",
+            "height": "1.10m",
+            "entry_fee": "$50"
+          },
+          {
+            "name": "Amateur Class",
+            "height": "1.20m",
+            "entry_fee": "$75"
+          },
+          {
+            "name": "Professional Class",
+            "height": "1.40m",
+            "entry_fee": "$100"
+          }
+        ],
+        "rules": "Riders must wear official riding attire. All horses must be registered with the national federation."
+      },
+      "spectator_info": {
+        "ticket_price": "Free",
+        "purchase_options": "Tickets available at the venue."
+      },
+      "prize_money": {
+        "total_prize": "$5,000",
+        "awards": [
+          {
+            "class": "Junior Class",
+            "prize": "$1,000"
+          },
+          {
+            "class": "Amateur Class",
+            "prize": "$1,500"
+          },
+          {
+            "class": "Professional Class",
+            "prize": "$2,500"
+          }
+        ]
+      },
+      "event_id": "0347f1e2-5517-43ab-b9f7-c37266524058"
+    },
+    {
+      "name": "Spring Showjumping Invitational",
+      "type": "National Event",
+      "date": "2025-03-15",
+      "time": "10:00 AM",
+      "image": "/events/event-2.jpg",
+      "location": {
+        "venue": "Sunshine Stables",
+        "address": "456 Sunny Road, Georgia, USA",
+        "map": "https://maps.example.com/location"
+      },
+      "overview": "The Spring Showjumping Invitational features local riders competing in a friendly yet competitive atmosphere.",
+      "schedule": [
+        {
+          "time": "10:00 AM",
+          "activity": "Round 1 - Novice Class"
+        },
+        {
+          "time": "11:30 AM",
+          "activity": "Round 2 - Amateur Class"
+        },
+        {
+          "time": "01:00 PM",
+          "activity": "Lunch Break"
+        },
+        {
+          "time": "02:00 PM",
+          "activity": "Round 3 - Open Class"
+        },
+        {
+          "time": "04:00 PM",
+          "activity": "Prize Ceremony"
+        }
+      ],
+      "competition_details": {
+        "classes": [
+          {
+            "name": "Novice Class",
+            "height": "1.00m",
+            "entry_fee": "$30"
+          },
+          {
+            "name": "Amateur Class",
+            "height": "1.10m",
+            "entry_fee": "$50"
+          },
+          {
+            "name": "Open Class",
+            "height": "1.20m",
+            "entry_fee": "$75"
+          }
+        ],
+        "rules": "Competitors must have at least 6 months of experience in showjumping."
+      },
+      "spectator_info": {
+        "ticket_price": "Free",
+        "purchase_options": "Available at the gate on the event day."
+      },
+      "prize_money": {
+        "total_prize": "$3,000",
+        "awards": [
+          {
+            "class": "Novice Class",
+            "prize": "$500"
+          },
+          {
+            "class": "Amateur Class",
+            "prize": "$1,000"
+          },
+          {
+            "class": "Open Class",
+            "prize": "$1,500"
+          }
+        ]
+      },
+      "event_id": "2494a9c5-cf86-473e-b9a9-eb89f5e202dd"
+    },
+    {
+      "name": "Summer Grand Prix Showjumping",
+      "type": "International Competition",
+      "date": "2025-07-10",
+      "time": "08:00 AM",
+      "image": "/events/event-3.jpg",
+      "location": {
+        "venue": "Grand Arena",
+        "address": "789 Arena Blvd, Georgia, USA",
+        "map": "https://maps.example.com/location"
+      },
+      "overview": "An exciting international showjumping event featuring world-class riders and horses.",
+      "schedule": [
+        {
+          "time": "08:00 AM",
+          "activity": "Round 1 - Professional Class"
+        },
+        {
+          "time": "10:30 AM",
+          "activity": "Round 2 - Elite Class"
+        },
+        {
+          "time": "12:30 PM",
+          "activity": "Lunch Break"
+        },
+        {
+          "time": "01:30 PM",
+          "activity": "Round 3 - Final Class"
+        },
+        {
+          "time": "03:30 PM",
+          "activity": "Prize Ceremony"
+        }
+      ],
+      "competition_details": {
+        "classes": [
+          {
+            "name": "Professional Class",
+            "height": "1.40m",
+            "entry_fee": "$150"
+          },
+          {
+            "name": "Elite Class",
+            "height": "1.50m",
+            "entry_fee": "$200"
+          }
+        ],
+        "rules": "Open to all FEI-registered riders."
+      },
+      "spectator_info": {
+        "ticket_price": "Free",
+        "purchase_options": "Tickets available online or at the venue."
+      },
+      "prize_money": {
+        "total_prize": "$10,000",
+        "awards": [
+          {
+            "class": "Professional Class",
+            "prize": "$3,000"
+          },
+          {
+            "class": "Elite Class",
+            "prize": "$7,000"
+          }
+        ]
+      },
+      "event_id": "66c7a14b-ba79-44ae-9fb4-4075efa09984"
+    },
+    {
+      "name": "Autumn Horse Festival",
+      "type": "National Show",
+      "date": "2025-09-05",
+      "time": "09:30 AM",
+      "image": "/events/event-4.jpg",
+      "location": {
+        "venue": "Woodland Equestrian Center",
+        "address": "321 Forest Road, Georgia, USA",
+        "map": "https://maps.example.com/location"
+      },
+      "overview": "Celebrate autumn with a fun-filled horse festival, featuring showjumping and other equestrian activities.",
+      "schedule": [
+        {
+          "time": "09:30 AM",
+          "activity": "Round 1 - Junior Class"
+        },
+        {
+          "time": "11:00 AM",
+          "activity": "Round 2 - Open Class"
+        },
+        {
+          "time": "01:00 PM",
+          "activity": "Lunch Break"
+        },
+        {
+          "time": "02:00 PM",
+          "activity": "Round 3 - Invitational Class"
+        },
+        {
+          "time": "04:00 PM",
+          "activity": "Prize Ceremony"
+        }
+      ],
+      "competition_details": {
+        "classes": [
+          {
+            "name": "Junior Class",
+            "height": "1.00m",
+            "entry_fee": "$40"
+          },
+          {
+            "name": "Open Class",
+            "height": "1.20m",
+            "entry_fee": "$60"
+          },
+          {
+            "name": "Invitational Class",
+            "height": "1.30m",
+            "entry_fee": "$80"
+          }
+        ],
+        "rules": "Invitational Class by invitation only."
+      },
+      "spectator_info": {
+        "ticket_price": "Free",
+        "purchase_options": "Tickets available at the entrance."
+      },
+      "prize_money": {
+        "total_prize": "$4,000",
+        "awards": [
+          {
+            "class": "Junior Class",
+            "prize": "$500"
+          },
+          {
+            "class": "Open Class",
+            "prize": "$1,500"
+          },
+          {
+            "class": "Invitational Class",
+            "prize": "$2,000"
+          }
+        ]
+      },
+      "event_id": "c038759a-6da7-46d4-b79a-132003ece848"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+.prices h1 {
+  text-align: center;
+  font-size: 5rem;
+  color: #776246;
+  margin: 1.9rem;
+}
+
+.pricesContainer {
+  display: flex;
+  flex-direction: column; /* Stack items vertically for better layout */
+  align-items: center; /* Center items horizontally */
+  margin: 0 auto; /* Center the container itself */
+}
+
+.pricesContainer p {
+  color: #776246;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 400px;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .prices h1 {
+    font-size: 4rem;
+  }
+
+  .pricesContainer p {
+    width: 300px;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prices {
+    width: -webkit-fill-available;
+  }
+
+  .prices h1 {
+    font-size: 3rem;
+    margin: 1rem;
+  }
+
+  .pricesContainer {
+    width: 100%; /* Ensure the container spans the screen width */
+    align-items: center; /* Center the items horizontally */
+    padding: 1rem;
+  }
+
+  .pricesContainer p {
+    width: 90%; /* Reduce the width for better alignment on small screens */
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .prices h1 {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .pricesContainer p {
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+  }
+}
