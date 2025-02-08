@@ -1,0 +1,12 @@
+.container {
+  margin: auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #776246;
+  margin: 1rem;
+}

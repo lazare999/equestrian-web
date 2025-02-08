@@ -1,0 +1,62 @@
+.container {
+  color: #776246;
+  background-color: #af805e42;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem;
+  margin: 1rem 5rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    font-size: 1.2rem;
+    margin: 0.5rem 1rem;
+  }
+}
+
+.stableDescription p {
+  text-align: -webkit-auto;
+  margin: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .stableDescription p {
+    font-size: 1rem;
+    margin: 0.5rem;
+  }
+}
+
+.stableLogo {
+  float: inline-end;
+  margin: 10px 0 0 15px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .stableLogo {
+    width: 150px;
+    margin: 10px 0 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stableDescription {
+    text-overflow: ellipsis;
+    height: 20rem;
+    overflow: overlay;
+  }
+  .stableLogo {
+    width: 100px;
+    margin: 5px 0 0 5px;
+  }
+}
