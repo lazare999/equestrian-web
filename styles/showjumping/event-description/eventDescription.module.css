@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+}
+
+.image {
+  width: 250px;
+  height: max-content;
+  border-radius: 10px;
+}
+
+.mainDetailsContainer p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #776246;
+}
+
+.mainDetailsContainer span {
+  font-weight: 100;
+}
+
+.description {
+  font-size: 2rem;
+  text-align: -webkit-auto;
+  margin: 0 1.3rem;
+  line-height: 1.6;
+  max-width: fit-content;
+  color: #776246;
+  height: 490px;
+  overflow: auto;
+
+  /* Scrollbar styles */
+  --sb-track-color: #f1f1f1;
+  --sb-thumb-color: #ad8f77;
+  --sb-size: 10px;
+}
+
+.description::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+.description::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 5px;
+}
+
+.description::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 5px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .description {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
