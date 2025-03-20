@@ -2,22 +2,34 @@
 
 import { useState } from "react";
 import { addStableWithImages } from "../actions/stable-actions/stableActions";
-import Dropzone from "../add-images/page";
+import Dropzone from "../../add-images/page";
+
 import classes from "@/styles/admin/admin-add-new-stable/addNewStables.module.css";
+import AddPrices from "./add-prices/page";
+import AddContactInfo from "./add-contact-info/page";
+import AddRegion from "./add-region/page";
 
 export default function AddNewStable() {
   const [formData, setFormData] = useState({
     stableName: "",
     address: "",
+    regions: "",
     phoneNumber: "",
+    facebook: "",
+    email: "",
     description: "",
     stable_logo: "",
     stable_images: [],
+    horseRide: "", // Price fields
+    trainerSession: "",
+    ponyRide: "",
+    photoSession: "",
   });
+  console.log(formData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
+  console.log(formData);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
@@ -58,10 +70,17 @@ export default function AddNewStable() {
       setFormData({
         stableName: "",
         address: "",
+        region: "",
         phoneNumber: "",
+        facebook: "",
+        email: "",
         description: "",
         stable_logo: "",
         stable_images: [],
+        horseRide: "", // Price fields
+        trainerSession: "",
+        ponyRide: "",
+        photoSession: "",
       });
     } catch (err) {
       setError(err.message || "An error occurred.");
@@ -94,15 +113,9 @@ export default function AddNewStable() {
               onChange={handleChange}
               required
             />
-            <label htmlFor="phoneNumber">ტელეფონის ნომერი</label>
-            <input
-              type="number"
-              name="phoneNumber"
-              value={formData.phoneNumber}
-              onChange={handleChange}
-              required
-              placeholder="+995"
-            />
+            <AddRegion formData={formData} handleChange={handleChange} />
+            <AddPrices formData={formData} handleChange={handleChange} />
+            <AddContactInfo formData={formData} handleChange={handleChange} />
           </div>
           <div className={classes.secondFormDiv}>
             <label htmlFor="description">სრული აღწერა</label>
@@ -129,7 +142,7 @@ export default function AddNewStable() {
         <Dropzone
           label="Choose Stable Images"
           name="stable_images"
-          required={false}
+          required={true}
           onDrop={handleImagesChange}
         />
         <div className={classes.buttonContainer}>

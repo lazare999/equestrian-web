@@ -69,6 +69,19 @@
   border-radius: 5px;
 }
 
+@media (max-width: 1280px) {
+  .logoImg {
+    width: 60px;
+  }
+
+  .header {
+    padding: 0.5rem 2rem;
+  }
+  .navItem a {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;

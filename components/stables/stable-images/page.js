@@ -2,19 +2,16 @@ import { getStables } from "@/admin-components/stables/actions/stable-actions/st
 import Slider from "@/components/slider/slider";
 import sliderClasses from "../../../styles/stable-images/stableImages.module.css";
 
-export default async function StableImages({ id }) {
-  if (!id) {
-    return <p>No ID provided for stable images</p>;
-  }
-
-  const stables = await getStables();
-  const stable = stables.find((s) => s.$id === id);
-
+export default async function StableImages({ stable }) {
   if (!stable) {
-    return <p>Stable not found.</p>;
+    return <p>No stable data provided for images.</p>;
   }
 
-  // stable.stable_images is an array of URLs
+  // Ensure stable_images contains valid URLs
+  if (!stable.stable_images || stable.stable_images.length === 0) {
+    return <p>No images available for this stable.</p>;
+  }
+
   const OPTIONS = { dragFree: true };
 
   return (

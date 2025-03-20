@@ -6,11 +6,12 @@
 .stableCover {
   height: calc(100vh - 113px);
   width: 100%;
+  object-fit: cover;
 }
 
 .stableName {
   position: absolute;
-  top: 10%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -20,6 +21,26 @@
   color: antiquewhite;
   background-color: #74574266;
   border-radius: 10px;
+}
+
+.socialIcons {
+  position: absolute;
+  top: 87%;
+  left: 2%;
+  display: flex;
+  gap: 20px; /* Adjust spacing between icons */
+}
+
+.socialIcon {
+  position: relative;
+  background-color: #ffffff70;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.socialIcon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
@@ -43,5 +64,24 @@
   .stableName {
     font-size: 1.5rem;
     top: 15%;
+  }
+}
+
+@media (max-width: 480px) {
+  .stableCover {
+    height: auto;
+    width: 100%;
+  }
+
+  .stableName {
+    font-size: 1rem;
+    top: 100px;
+  }
+  .socialIcons {
+    top: 245px;
+    gap: 5px;
+  }
+  .socialIcon {
+    width: 30px;
   }
 }

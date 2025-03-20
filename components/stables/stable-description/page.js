@@ -1,10 +1,10 @@
 import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
-
 import classes from "@/styles/stable-description/stableDescription.module.css";
 
-export default async function StableDescription({ id }) {
-  const stables = await getStables();
-  const stable = stables.find((s) => s.$id === id);
+export default async function StableDescription({ stable }) {
+  if (!stable) {
+    return <p>Stable data not available.</p>;
+  }
 
   return (
     <div className={classes.container}>

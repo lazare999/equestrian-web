@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.img {
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
