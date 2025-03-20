@@ -1,0 +1,120 @@
+.sliderContainer {
+  height: calc(100vh - 113px);
+  background-image: url("/home-page-images/homePageCover.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: antiquewhite;
+  padding: 1rem; /* Added padding for smaller screens */
+}
+
+.sliderContainer h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.sliderContainer p {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.sliderContainer button {
+  background-color: antiquewhite;
+  color: black;
+  opacity: 0.5;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.sliderContainer button:hover {
+  opacity: 1;
+}
+
+.welcomeLetterContainer {
+  margin: 3rem 4rem;
+  color: #ad8f77;
+  text-align: center;
+  line-height: 1.3em;
+  padding: 2rem;
+  border-radius: 2.5rem;
+}
+
+.welcomeLetterContainer h1 {
+  font-size: 3rem;
+  margin: 20px;
+}
+
+.welcomeLetterContainer p {
+  margin-top: 30px;
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .sliderContainer h1 {
+    font-size: 2.5rem;
+  }
+
+  .sliderContainer p {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .sliderContainer button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .welcomeLetterContainer {
+    margin: 2rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .welcomeLetterContainer h1 {
+    font-size: 2rem;
+  }
+
+  .welcomeLetterContainer p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sliderContainer {
+    height: auto;
+  }
+  .sliderContainer h1 {
+    font-size: 1rem;
+  }
+
+  .sliderContainer p {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .sliderContainer button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .welcomeLetterContainer {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .welcomeLetterContainer h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcomeLetterContainer p {
+    font-size: 0.9rem;
+    line-height: 1.1rem;
+  }
+}
