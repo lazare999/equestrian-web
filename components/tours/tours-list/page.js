@@ -9,6 +9,7 @@ import SkeletonLoader from "../../skeleton-loader/loader";
 export default function ToursList() {
   const [tours, setTours] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState({});
   const [error, setError] = useState(null);
   const router = useRouter();
 
@@ -28,10 +29,16 @@ export default function ToursList() {
   }, []);
 
   const handleTourClick = (tour) => {
-    // Navigate using Firebase-generated tour ID (tourKey)
     router.push(`/tours/${tour.tourKey}`, {
-      state: tour, // Pass tour data as state
+      state: tour,
     });
+  };
+
+  const handleImageLoad = (tourKey) => {
+    setImageLoaded((prevState) => ({
+      ...prevState,
+      [tourKey]: true,
+    }));
   };
 
   if (loading) {
@@ -45,16 +52,17 @@ export default function ToursList() {
   return (
     <div className={classes.container}>
       {tours.map((tour) => (
-        <div
-          key={tour.tourKey} // Use Firebase-generated tour key for unique key
-          className={classes.tourCard}
-          onClick={() => handleTourClick(tour)} // Pass tour data to handleTourClick
-        >
-          <img
-            src={tour.tourImages[0]} // Display the first image from the tourImages array
-            alt={`${tour.stableName} Tour Thumbnail`}
-            className={classes.tourImage}
-          />
+        <div key={tour.tourKey} className={classes.tourCard} onClick={() => handleTourClick(tour)}>
+          <div className={classes.imageContainer}>
+            {!imageLoaded[tour.tourKey] && <SkeletonLoader count={1} showTextSkeleton={false} />}
+            <img
+              src={tour.tourImages[0]}
+              alt={`${tour.stableName} Tour Thumbnail`}
+              className={classes.tourImage}
+              onLoad={() => handleImageLoad(tour.tourKey)}
+              style={{ display: imageLoaded[tour.tourKey] ? "block" : "none" }}
+            />
+          </div>
           <h2 className={classes.tourName}>{tour.tourName}</h2>
           <p className={classes.tourLocation}>{tour.tourLocation}</p>
         </div>

@@ -12,6 +12,12 @@
   align-items: flex-start;
 }
 
+@media (max-width: 1280px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     flex-wrap: wrap;

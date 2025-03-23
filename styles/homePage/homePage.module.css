@@ -57,6 +57,12 @@
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1280px) {
+  .sliderContainer {
+    height: calc(100vh - 77px);
+  }
+}
+
 @media (max-width: 768px) {
   .sliderContainer h1 {
     font-size: 2.5rem;
