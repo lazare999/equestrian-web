@@ -3,7 +3,7 @@
   margin: 1rem;
   --slide-height: 19rem;
   --slide-spacing: 1rem;
-  --slide-size: 30%;
+  --slide-size: auto;
 }
 
 .embla__viewport {
@@ -140,6 +140,19 @@
   bottom: 0;
   left: -100%;
 }
+@media (max-width: 1280px) {
+  .embla__controls {
+    margin-top: 1rem;
+  }
+  .embla__button {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+  .embla {
+    --slide-size: auto;
+  }
+}
+
 @media (max-width: 320px) {
   .embla__button {
     width: 2.6rem;

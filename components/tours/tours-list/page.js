@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getTours } from "@/admin-components/stables/actions/tours-actions/toursActions";
 import classes from "@/styles/tours-list/toursList.module.css";
@@ -11,6 +11,7 @@ export default function ToursList() {
   const [imageUrls, setImageUrls] = useState([]);
   const [loadedImages, setLoadedImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState({});
   const [error, setError] = useState(null);
   const router = useRouter();
   console.log(imageUrls);
@@ -37,22 +38,16 @@ export default function ToursList() {
   // }, [tours]);
 
   const handleTourClick = (tour) => {
-    // Navigate using Firebase-generated tour ID (tourKey)
     router.push(`/tours/${tour.tourKey}`, {
-      state: tour, // Pass tour data as state
+      state: tour,
     });
   };
 
-  const checkIsImagesIsLoaded = (newImageUrl) => {
-    console.log("iimage");
-    if (!tours.length) {
-      return;
-    }
-    if (loadedImages.length === imageUrls.length) {
-      setLoading(false);
-    } else {
-      setLoadedImages((loadedImages) => loadedImages.push(newImageUrl));
-    }
+  const handleImageLoad = (tourKey) => {
+    setImageLoaded((prevState) => ({
+      ...prevState,
+      [tourKey]: true,
+    }));
   };
 
   if (loading) {
@@ -66,18 +61,17 @@ export default function ToursList() {
   return (
     <div className={classes.container}>
       {tours.map((tour) => (
-        <div
-          key={tour.tourKey} // Use Firebase-generated tour key for unique key
-          className={classes.tourCard}
-          onClick={() => handleTourClick(tour)} // Pass tour data to handleTourClick
-        >
-          <img
-            // onLoad={() => checkIsImagesIsLoaded(tour.tourImages[0])}
-            // onLoad={() => console.log("image")}
-            src={tour.tourImages[0]} // Display the first image from the tourImages array
-            alt={`${tour.stableName} Tour Thumbnail`}
-            className={classes.tourImage}
-          />
+        <div key={tour.tourKey} className={classes.tourCard} onClick={() => handleTourClick(tour)}>
+          <div className={classes.imageContainer}>
+            {!imageLoaded[tour.tourKey] && <SkeletonLoader count={1} showTextSkeleton={false} />}
+            <img
+              src={tour.tourImages[0]}
+              alt={`${tour.stableName} Tour Thumbnail`}
+              className={classes.tourImage}
+              onLoad={() => handleImageLoad(tour.tourKey)}
+              style={{ display: imageLoaded[tour.tourKey] ? "block" : "none" }}
+            />
+          </div>
           <h2 className={classes.tourName}>{tour.tourName}</h2>
           <p className={classes.tourLocation}>{tour.tourLocation}</p>
         </div>

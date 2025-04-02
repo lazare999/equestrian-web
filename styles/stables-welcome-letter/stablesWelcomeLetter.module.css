@@ -63,14 +63,9 @@
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-    padding: 1rem;
-  }
-
+@media (max-width: 1280px) {
   .container h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .container p {
@@ -79,6 +74,17 @@
 
   .listContainer ul {
     font-size: 1rem;
+  }
+
+  .arrow {
+    width: 25px; /* Adjust arrow size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 1rem;
   }
 
   .arrow {
