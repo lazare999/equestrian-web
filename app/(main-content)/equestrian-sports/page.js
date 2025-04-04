@@ -10,8 +10,6 @@ import classes from "@/styles/equestrian-sports/equestrianSports.module.css";
 export default function EquestrianSportsPage() {
   return (
     <div className={classes.container}>
-      <h1 className={classes.title}>Choose your option</h1>
-
       <div className={classes.sportsCategoryContainer}>
         <Link href="/equestrian-sports/horse-race">
           <Image

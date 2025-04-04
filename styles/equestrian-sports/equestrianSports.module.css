@@ -85,3 +85,19 @@
 .otherSportsImg:active {
   transform: scale(1.04);
 }
+
+@media (max-width: 480px) {
+  .container {
+    height: 100%;
+  }
+  .sportsCategoryContainer {
+    height: 100%;
+  }
+  .sportsCategoryContainer img {
+    width: 300px;
+    height: auto;
+  }
+  .otherSportsContainer {
+    display: none;
+  }
+}

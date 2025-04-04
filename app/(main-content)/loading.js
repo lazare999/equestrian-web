@@ -1,6 +1,8 @@
+import classes from "@/styles/loading/loading.module.css";
+
 export default function Loading() {
   return (
-    <div>
+    <div className={classes.loadingContainer}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="430"
