@@ -21,19 +21,13 @@ const equestrianClub = [
   },
 ];
 
-export default function AddParticipants({
-  participants = [],
-  addParticipant,
-  removeParticipant,
-  editParticipant,
-  setEditParticipantIndex,
-  editParticipantIndex,
-}) {
+export default function AddParticipants({ participants = [], setFormData }) {
   const [newParticipant, setNewParticipant] = useState({
     riderName: "",
     horseName: "",
     equestrianClub: equestrianClub[0].name, // Fixed "location" name
   });
+  const [editParticipantIndex, setEditParticipantIndex] = useState(null);
 
   useEffect(() => {
     if (editParticipantIndex !== null && participants[editParticipantIndex]) {
@@ -58,14 +52,28 @@ export default function AddParticipants({
 
   const handleAddParticipant = () => {
     if (newParticipant.riderName && newParticipant.horseName && newParticipant.equestrianClub) {
+      let updatedParticipants;
       if (editParticipantIndex === null) {
-        addParticipant(newParticipant);
+        updatedParticipants = [...participants, newParticipant];
       } else {
-        editParticipant(newParticipant, editParticipantIndex);
+        updatedParticipants = [...participants];
+        updatedParticipants[editParticipantIndex] = newParticipant;
+        setEditParticipantIndex(null);
       }
+      setFormData((prevState) => ({
+        ...prevState,
+        participants: updatedParticipants,
+      }));
       setNewParticipant({ riderName: "", horseName: "", equestrianClub: equestrianClub[0].name });
-      setEditParticipantIndex(null);
     }
+  };
+
+  const handleRemoveParticipant = (index) => {
+    const updatedParticipants = participants.filter((_, i) => i !== index);
+    setFormData((prevState) => ({
+      ...prevState,
+      participants: updatedParticipants,
+    }));
   };
 
   return (
@@ -77,7 +85,7 @@ export default function AddParticipants({
             <p>{`მონაწილის სახელი: ${participant.riderName}`}</p>
             <p>{`ცხენის სახელი: ${participant.horseName}`}</p>
             <p>{`საცხენოსნო კლუბის: ${participant.equestrianClub}`}</p>
-            <button type="button" onClick={() => removeParticipant(index)}>
+            <button type="button" onClick={() => handleRemoveParticipant(index)}>
               მონაწილეს წაშლა
             </button>
             <button type="button" onClick={() => setEditParticipantIndex(index)}>

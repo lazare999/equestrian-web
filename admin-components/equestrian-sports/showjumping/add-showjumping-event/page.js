@@ -18,36 +18,12 @@ export default function AddShowjumpingEvent() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [editParticipantIndex, setEditParticipantIndex] = useState(null);
 
-  // Handle input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  const addParticipant = (newParticipant) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      participants: [...prevState.participants, newParticipant],
-    }));
-  };
-
-  const editParticipant = (updatedParticipant, index) => {
-    const updatedParticipants = [...formData.participants];
-    updatedParticipants[index] = updatedParticipant;
-    setFormData((prevState) => ({
-      ...prevState,
-      participants: updatedParticipants,
-    }));
-  };
-
-  // Remove a participant by index
-  const removeParticipant = (index) => {
-    const updatedParticipants = formData.participants.filter((_, i) => i !== index);
-    setFormData({ ...formData, participants: updatedParticipants });
   };
 
   const handleImagesChange = (acceptedFiles) => {
@@ -125,14 +101,7 @@ export default function AddShowjumpingEvent() {
           onDrop={handleImagesChange}
         />
 
-        <AddParticipants
-          participants={formData.participants}
-          addParticipant={addParticipant}
-          removeParticipant={removeParticipant}
-          editParticipant={editParticipant}
-          setEditParticipantIndex={setEditParticipantIndex}
-          editParticipantIndex={editParticipantIndex}
-        />
+        <AddParticipants participants={formData.participants} setFormData={setFormData} />
         {/* Submit Button */}
         <button type="submit" className={classes.submitButton} disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : "შეჯიბრის დამატება"}
