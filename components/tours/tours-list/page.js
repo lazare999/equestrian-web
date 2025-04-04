@@ -8,11 +8,13 @@ import SkeletonLoader from "../../skeleton-loader/loader";
 
 export default function ToursList() {
   const [tours, setTours] = useState([]);
+  const [imageUrls, setImageUrls] = useState([]);
+  const [loadedImages, setLoadedImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState({});
   const [error, setError] = useState(null);
   const router = useRouter();
-
+  console.log(imageUrls);
   useEffect(() => {
     const fetchTours = async () => {
       try {
@@ -27,6 +29,13 @@ export default function ToursList() {
 
     fetchTours();
   }, []);
+
+  // useEffect(() => {
+  //   if (!tours.length) {
+  //     return;
+  //   }
+  //   setImageUrls(tours.map((tour) => tour.tourImages[0]));
+  // }, [tours]);
 
   const handleTourClick = (tour) => {
     router.push(`/tours/${tour.tourKey}`, {
