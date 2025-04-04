@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
 
 import phone from "@/public/contacts-images/smartphone.png";
 import email from "@/public/contacts-images/email.png";

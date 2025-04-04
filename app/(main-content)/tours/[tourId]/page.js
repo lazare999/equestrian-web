@@ -1,4 +1,4 @@
-import { getTours } from "@/admin-components/stables/actions/tours-actions/toursActions";
+import { getTours } from "@/app/actions/tours-actions/toursActions";
 import TourDescription from "@/components/tours/tour-description/page";
 import TourImages from "@/components/tours/tour-images/page";
 import ToursSlider from "@/components/tours/tours-slider/page";

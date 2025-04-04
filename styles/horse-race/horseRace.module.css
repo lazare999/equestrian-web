@@ -1,0 +1,34 @@
+.coverContainer {
+  height: 30vh;
+  background-image: url(/equestrian-sports-images/horse-race/horse-race-cover.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: antiquewhite;
+  padding: 1rem;
+}
+
+.welcomeLetterContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #745742;
+  margin: 1rem 0;
+}
+
+.welcomeLetterContainer p {
+  width: 70%;
+  font-size: 1.2em;
+  line-height: 1.2em; /* Increased spacing for better readability */
+  text-align: justify; /* Justify text for a clean look */
+  color: #5a3e2b; /* A slightly darker shade for better contrast */
+  font-weight: 400; /* Normal font weight for readability */
+  padding: 1rem; /* Add space above and below */
+  /* background-color: #b0896a40; */
+  border-radius: 30px;
+}

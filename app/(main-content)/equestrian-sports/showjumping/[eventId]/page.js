@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getShowjumpingEvents } from "@/admin-components/stables/actions/showumping-actions/showjumpingActions";
+import { getShowjumpingEvents } from "@/app/actions/showumping-actions/showjumpingActions";
 
 import EventDescription from "@/components/showjumping/event-details/page";
 import EventParticipants from "@/components/showjumping/event-participants/page";

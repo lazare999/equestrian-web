@@ -1,4 +1,3 @@
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
 import classes from "@/styles/stable-description/stableDescription.module.css";
 
 export default async function StableDescription({ stable }) {

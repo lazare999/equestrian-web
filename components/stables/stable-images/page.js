@@ -1,4 +1,3 @@
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
 import Slider from "@/components/slider/slider";
 import sliderClasses from "../../../styles/stable-images/stableImages.module.css";
 

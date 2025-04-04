@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
+import { getStables } from "@/app/actions/stable-actions/stableActions";
 import StableFilter from "../stables-filter/page";
 import classes from "@/styles/stables-list/stablesList.module.css";
 import SkeletonLoader from "../../skeleton-loader/loader";

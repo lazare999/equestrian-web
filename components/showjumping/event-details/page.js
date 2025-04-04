@@ -1,4 +1,4 @@
-import { getShowjumpingEvents } from "@/admin-components/stables/actions/showumping-actions/showjumpingActions";
+import { getShowjumpingEvents } from "@/app/actions/showumping-actions/showjumpingActions";
 
 import classes from "@/styles/showjumping/event-description/eventDescription.module.css";
 import MobileScreenCover from "./mobile-screen-cover/page";

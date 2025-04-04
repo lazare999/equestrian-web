@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { MaterialReactTable, useMaterialReactTable } from "material-react-table";
 import { Spinner } from "@heroui/spinner";
-import { getShowjumpingEvents } from "@/admin-components/stables/actions/showumping-actions/showjumpingActions"; // Import getShowjumpingEvents
+import { getShowjumpingEvents } from "@/app/actions/showumping-actions/showjumpingActions"; // Import getShowjumpingEvents
 
 import lisilakeLogo from "../../../public/equestrian-sports-images/equestrian-clubs-logo/lisilakeLogo.jpg";
 import menesLogo from "../../../public/equestrian-sports-images/equestrian-clubs-logo/menesLogo.jpg";

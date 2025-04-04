@@ -1,4 +1,3 @@
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
 import classes from "@/styles/stable-prices/stablePrices.module.css";
 
 export default async function StablePrices({ stable }) {

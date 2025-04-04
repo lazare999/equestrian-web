@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getTours } from "@/admin-components/stables/actions/tours-actions/toursActions";
+import { getTours } from "@/app/actions/tours-actions/toursActions";
 import classes from "@/styles/tours-list/toursList.module.css";
 import SkeletonLoader from "../../skeleton-loader/loader";
 

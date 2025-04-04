@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Slider from "../../slider/slider";
 import { useState, useEffect } from "react";
-import { getShowjumpingEvents } from "@/admin-components/stables/actions/showumping-actions/showjumpingActions";
+import { getShowjumpingEvents } from "@/app/actions/showumping-actions/showjumpingActions";
 
 import classes from "@/styles/showjumping/showjumping-events/showjumpingEvents.module.css";
 import sliderClasses from "@/styles/slider/slider.module.css";

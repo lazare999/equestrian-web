@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Slider from "@/components/slider/slider";
-import { getTours } from "@/admin-components/stables/actions/tours-actions/toursActions";
+import { getTours } from "@/app/actions/tours-actions/toursActions";
 import classes from "@/styles/tours-slider/toursSlider.module.css";
 import sliderClasses from "@/styles/slider/slider.module.css";
 

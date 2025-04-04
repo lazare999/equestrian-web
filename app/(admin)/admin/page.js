@@ -14,6 +14,13 @@ export default function AdminPage() {
         </Link>
       </div>
       <div className={classes.card}>
+        <h2>Manage Horse Race Events</h2>
+        <p>View and manage users.</p>
+        <Link href="/admin/horse-race" className={classes.link}>
+          Go to horse race events
+        </Link>
+      </div>
+      <div className={classes.card}>
         <h2>Manage Showjumping Events</h2>
         <p>View and manage users.</p>
         <Link href="/admin/showjumping-events" className={classes.link}>

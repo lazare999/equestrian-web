@@ -1,4 +1,4 @@
-import { getStables } from "@/admin-components/stables/actions/stable-actions/stableActions";
+import { getStables } from "@/app/actions/stable-actions/stableActions";
 
 import StableCover from "@/components/stables/stable-cover/page";
 import StableDescription from "@/components/stables/stable-description/page";
