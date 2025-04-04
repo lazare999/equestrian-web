@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { addHorseRaceEvent } from "@/app/actions/horse-race-actions/horseRaceActions";
 import AddHorseRaceMainInfo from "@/admin-components/equestrian-sports/horse-race/add-main-info/page";
 import AddHorseRaceParticipants from "@/admin-components/equestrian-sports/horse-race/add-participants/page";
 import Dropzone from "@/admin-components/add-images/page";
@@ -26,10 +27,15 @@ export default function HorseRace() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("შეჯიბრის მონაცემები:", formData);
-    // მონაცემების გაგზავნა Firebase-ში ან API-ში
+    try {
+      const response = await addHorseRaceEvent(formData);
+      console.log("Horse race event added:", response);
+      // Optionally reset form here
+    } catch (error) {
+      console.error("Error submitting horse race event:", error);
+    }
   };
 
   return (
