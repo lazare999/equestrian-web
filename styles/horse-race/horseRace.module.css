@@ -25,7 +25,7 @@
   width: 70%;
   font-size: 1.2em;
   line-height: 1.2em; /* Increased spacing for better readability */
-  text-align: justify; /* Justify text for a clean look */
+  text-align: center; /* Justify text for a clean look */
   color: #5a3e2b; /* A slightly darker shade for better contrast */
   font-weight: 400; /* Normal font weight for readability */
   padding: 1rem; /* Add space above and below */

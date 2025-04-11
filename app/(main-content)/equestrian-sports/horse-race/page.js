@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import classes from "@/styles/horse-race/horseRace.module.css";
+import HorseRaceEvents from "@/components/horse-race/horse-race-events/page";
 
 export default function HorseRacePage() {
   return (
@@ -27,6 +26,7 @@ export default function HorseRacePage() {
           ტანსაცმელი და სხვა) ურიგებდნენ.
         </p>
       </div>
+      <HorseRaceEvents />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { ref, push, set } from "firebase/database";
+import { ref, push, set, get } from "firebase/database";
 import { ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 import { database, storage } from "@/lib/firebase/firebase";
 
