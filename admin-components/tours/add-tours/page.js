@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { addTourWithImages } from "@/admin-components/stables/actions/tours-actions/toursActions";
+import { addTourWithImages } from "@/app/actions/tours-actions/toursActions";
 import Dropzone from "@/admin-components/add-images/page";
 
 export default function AddTours() {
