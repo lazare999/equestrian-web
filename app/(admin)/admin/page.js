@@ -28,6 +28,13 @@ export default function AdminPage() {
         </Link>
       </div>
       <div className={classes.card}>
+        <h2>Manage Horses</h2>
+        <p>View and manage all horses.</p>
+        <Link href="/admin/horses" className={classes.link}>
+          Go to horses
+        </Link>
+      </div>
+      <div className={classes.card}>
         <h2>Manage Tours</h2>
         <p>View and manage tours.</p>
         <Link href="/admin/tours" className={classes.link}>

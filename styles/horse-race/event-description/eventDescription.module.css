@@ -64,7 +64,7 @@
   padding: 0.5rem;
 }
 
-.table td:first-child {
+/* .table td:first-child {
   width: 35%;
 }
 
@@ -74,6 +74,10 @@
 
 .table td:last-child {
   width: 25%;
+} */
+
+.mobileScreenContainer {
+  display: none; /* Default to hidden */
 }
 
 /* Mobile responsiveness */
@@ -94,6 +98,7 @@
   .table td {
     display: block;
     padding: 0.5rem;
+    text-align: center;
   }
 }
 
@@ -111,6 +116,12 @@
 }
 
 @media (max-width: 550px) {
+  /* .imgAndDescription {
+    display: none;
+  } */
+  .container {
+    display: block;
+  }
   .imgAndDescription {
     display: none;
   }

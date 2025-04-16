@@ -33,7 +33,7 @@ export default async function StableAddress({ stable }) {
           <h3>მისამართი: </h3>
           {/* Add map if needed */}
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5954.640498793491!2d44.849992687384024!3d41.73518479678255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x404412a4103f6425%3A0xddb8615a4befe2d9!2z4YOh4YOe4YOY4YOg4YOY4YOi4YOY!5e0!3m2!1ska!2sge!4v1737026893551!5m2!1ska!2sge"
+            src={stable.addressLink}
             width="100%"
             height="90%"
             style={{ border: 0 }}

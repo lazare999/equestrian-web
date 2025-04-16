@@ -43,6 +43,27 @@
   transform: scale(1.1);
 }
 
+@media (max-width: 2230px) {
+  .stableName {
+    font-size: 4.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .stableName {
+    font-size: 4rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .stableName {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .stableCover {
     height: auto;
@@ -62,26 +83,28 @@
   }
 
   .stableName {
-    font-size: 1.5rem;
-    top: 15%;
-  }
-}
-
-@media (max-width: 480px) {
-  .stableCover {
-    height: auto;
-    width: 100%;
-  }
-
-  .stableName {
     font-size: 1rem;
     top: 100px;
   }
   .socialIcons {
-    top: 245px;
+    top: 295px;
     gap: 5px;
   }
   .socialIcon {
     width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialIcons {
+    top: 315px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 420px) {
+  .socialIcons {
+    top: 245px;
+    gap: 5px;
   }
 }

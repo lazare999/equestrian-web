@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import classes from "@/styles/admin/admin-equestrian-sports/admin-showjumping/admin-add-showjumping-event/addShwjumpingEvent.module.css";
-import { addShwjumpingEvent } from "@/admin-components/stables/actions/showumping-actions/showjumpingActions"; // Import the action
+import { addShwjumpingEvent } from "@/app/actions/showumping-actions/showjumpingActions"; // Import the action
+
 import Dropzone from "@/admin-components/add-images/page";
 import AddParticipants from "../add-participants/page";
+
+import classes from "@/styles/admin/admin-equestrian-sports/admin-showjumping/admin-add-showjumping-event/addShwjumpingEvent.module.css";
 
 export default function AddShowjumpingEvent() {
   const [formData, setFormData] = useState({

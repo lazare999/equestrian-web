@@ -4,6 +4,7 @@ import showjumpingImage from "@/public/showjumping-demo-image.jpg";
 import ShowjumpingEvents from "@/components/showjumping/showjumping-events/page";
 
 import classes from "@/styles/showjumping/showjumping.module.css";
+import HorseSlider from "@/components/horses/horse-slider/page";
 
 export default function ShowjumpingPage() {
   return (
@@ -45,8 +46,9 @@ export default function ShowjumpingPage() {
         </div>
       </div>
       {/* Events */}
-
       <ShowjumpingEvents />
+      {/* horses */}
+      <HorseSlider />
     </div>
   );
 }

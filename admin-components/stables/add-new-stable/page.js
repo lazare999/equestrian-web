@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { addStableWithImages } from "../actions/stable-actions/stableActions";
+import { addStableWithImages } from "@/app/actions/stable-actions/stableActions";
 import Dropzone from "../../add-images/page";
 
 import classes from "@/styles/admin/admin-add-new-stable/addNewStables.module.css";
@@ -13,6 +13,7 @@ export default function AddNewStable() {
   const [formData, setFormData] = useState({
     stableName: "",
     address: "",
+    addressLink: "",
     regions: "",
     phoneNumber: "",
     facebook: "",
@@ -70,6 +71,7 @@ export default function AddNewStable() {
       setFormData({
         stableName: "",
         address: "",
+        addressLink: "",
         region: "",
         phoneNumber: "",
         facebook: "",
@@ -110,6 +112,14 @@ export default function AddNewStable() {
               type="text"
               name="address"
               value={formData.address}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="address">მისამართის ლინკი</label>
+            <input
+              type="text"
+              name="address"
+              value={formData.addressLink}
               onChange={handleChange}
               required
             />

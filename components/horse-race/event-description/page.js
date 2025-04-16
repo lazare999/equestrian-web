@@ -1,7 +1,7 @@
 import { getHorseRaceEvents } from "@/app/actions/horse-race-actions/horseRaceActions";
 
 import classes from "@/styles/horse-race/event-description/eventDescription.module.css";
-// import MobileScreenCover from "./mobile-screen-cover/page";
+import MobileScreenCover from "@/components/showjumping/event-details/mobile-screen-cover/page";
 
 export default async function EventDescription({ params }) {
   const { eventId } = params;
@@ -24,13 +24,13 @@ export default async function EventDescription({ params }) {
         </p>
       </div>
 
-      {/* <MobileScreenCover imageUrl={event.eventCover} eventDescription={event.eventDescription} /> */}
+      <MobileScreenCover imageUrl={event.eventCover} eventDescription={event.eventDescription} />
 
       <table className={classes.table}>
         <tbody>
           <tr>
+            <td>გარბენი: {`${event.furlong} მეტრი` || "არ არის მითითებული"}</td>
             <td>დასაწყისი: {event.startTime || "დასაზუსტებელია"}</td>
-            <td>გარბენი: {event.verbalAddress || "არ არის მითითებული"}</td>
             <td>დასწრება: თავისუფალია</td>
           </tr>
         </tbody>

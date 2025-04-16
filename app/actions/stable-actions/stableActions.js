@@ -20,6 +20,7 @@ export async function addStableWithImages(formData) {
     const stableData = {
       stableName: formData.stableName,
       address: formData.address,
+      addressLink: formData.addressLink,
       regions: formData.regions,
       phoneNumber: formData.phoneNumber,
       facebook: formData.facebook,

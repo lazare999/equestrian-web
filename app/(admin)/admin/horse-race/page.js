@@ -9,6 +9,7 @@ import Dropzone from "@/admin-components/add-images/page";
 export default function HorseRace() {
   const [formData, setFormData] = useState({
     eventName: "",
+    eventDescription: "",
     eventDate: "",
     startTime: "",
     locationLink: "",

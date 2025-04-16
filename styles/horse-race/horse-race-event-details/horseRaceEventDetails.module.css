@@ -1,0 +1,33 @@
+.container {
+  margin: auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #776246;
+  margin: 1rem;
+}
+
+@media (max-width: 1280px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}

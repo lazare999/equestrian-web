@@ -19,6 +19,7 @@ export const addHorseRaceEvent = async (formData) => {
     // Prepare horse race event data
     const eventData = {
       eventName: formData.eventName,
+      eventDescription: formData.eventDescription,
       eventDate: formData.eventDate,
       startTime: formData.startTime,
       locationLink: formData.locationLink,

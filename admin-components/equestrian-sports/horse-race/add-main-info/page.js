@@ -24,6 +24,18 @@ export default function AddMainInfo({ formData, setFormData }) {
         required
       />
 
+      <label htmlFor="eventName" className={classes.label}>
+        აღწერა
+      </label>
+      <input
+        type="text"
+        name="eventDescription"
+        value={formData.eventDescription}
+        onChange={handleChange}
+        className={classes.input}
+        required
+      />
+
       <label htmlFor="eventDate" className={classes.label}>
         შეჯიბრის თარიღი
       </label>

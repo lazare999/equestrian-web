@@ -1,0 +1,56 @@
+/* slider.module.css */
+
+.embla {
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  align-items: center;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  position: relative;
+}
+
+/* .embla__slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+} */
+
+.embla__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.embla__button {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+
+.embla__button:hover {
+  background: #ccc;
+}
+
+@media (max-width: 480px) {
+  .embla {
+    width: 100%;
+  }
+}

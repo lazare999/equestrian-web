@@ -1,0 +1,58 @@
+.container {
+  padding: 20px;
+}
+
+.imageTableWrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.horseImage {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.customTable {
+  width: 100%;
+  max-width: 500px;
+  border-collapse: collapse;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.customTable thead th {
+  background-color: #8a7c71;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 10px;
+  text-align: left;
+}
+
+.customTable tbody th,
+.customTable tbody td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 16px;
+}
+
+.customTable tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #fffbd6;
+}
+
+@media (max-width: 480px) {
+  .horseImage {
+    width: 300px;
+  }
+}
