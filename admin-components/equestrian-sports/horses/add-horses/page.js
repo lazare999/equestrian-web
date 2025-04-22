@@ -4,7 +4,7 @@ import { useState } from "react";
 import classes from "@/styles/admin/admin-add-horses/addHorses.module.css";
 import Dropzone from "@/admin-components/add-images/page";
 
-import { addHorses } from "@/app/actions/horses-actions/horsesActions";
+import { addHorse } from "@/app/actions/horses-actions/horsesActions";
 
 export default function AddHorseInfo({ formData, setFormData }) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -33,7 +33,7 @@ export default function AddHorseInfo({ formData, setFormData }) {
     setErrorMessage("");
 
     try {
-      await addHorses(formData);
+      await addHorse(formData);
       alert("ცხენი წარმატებით დაემატა!");
       // Optional: reset form after successful submission
       setFormData({

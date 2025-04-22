@@ -8,13 +8,20 @@ import StableImages from "@/components/stables/stable-images/page";
 
 import classes from "@/styles/stable-details/stableDetails.module.css";
 
-export default async function StableDetailsPage({ params }) {
-  // Extract the stable ID from the URL params
-  const { stableId } = params; // Updated from id to stableId
-
-  // Fetch stable details using the stableId
+// ✅ Required for static export builds
+export async function generateStaticParams() {
   const stables = await getStables();
-  const stable = stables.find((s) => s.stableKey === stableId); // Use stableId for comparison
+
+  return stables.map((stable) => ({
+    stableId: stable.stableKey, // must match [stableId] in folder name
+  }));
+}
+
+export default async function StableDetailsPage({ params }) {
+  const { stableId } = params; // ✅ No need for `await` here
+
+  const stables = await getStables();
+  const stable = stables.find((s) => s.stableKey === stableId);
 
   if (!stable) {
     return <p>Stable not found.</p>;

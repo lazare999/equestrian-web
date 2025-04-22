@@ -1,10 +1,8 @@
 import { getHorseRaceEvents } from "@/app/actions/horse-race-actions/horseRaceActions";
-
 import classes from "@/styles/horse-race/event-description/eventDescription.module.css";
 import MobileScreenCover from "@/components/showjumping/event-details/mobile-screen-cover/page";
 
-export default async function EventDescription({ params }) {
-  const { eventId } = params;
+export default async function EventDescription({ eventId }) {
   const events = await getHorseRaceEvents();
   const event = events.find((s) => s.$id === eventId);
 

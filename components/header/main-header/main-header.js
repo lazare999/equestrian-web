@@ -6,13 +6,14 @@ import NavLink from "../nav/nav-link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import logo from "@/public/header-logo/logo1.jpg";
 import classes from "@/styles/header/main-header/mainHeader.module.css";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [, startTransition] = useTransition();
   const router = useRouter();
+
+  const logoPath = "/header-logo/logo1.jpg"; // ✅ use public path
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
@@ -30,10 +31,12 @@ export default function Header() {
       <div className={classes.logo}>
         <Link href="/">
           <Image
-            src={logo}
-            priority
-            className={classes.logoImg}
+            src={logoPath}
             alt="საქართველოს ცხენოსნობა ლოგო"
+            width={200}
+            height={100}
+            className={classes.logoImg}
+            priority
           />
         </Link>
       </div>
@@ -64,7 +67,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      {/* {isPending && <div className={classes.loadingOverlay}>Loading...</div>} */}
     </header>
   );
 }

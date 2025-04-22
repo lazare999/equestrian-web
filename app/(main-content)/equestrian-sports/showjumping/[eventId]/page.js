@@ -7,26 +7,35 @@ import EventSponsors from "@/components/showjumping/event-sponsors/page";
 
 import classes from "@/styles/showjumping/showjumping-event-details/showjumpingEventDetails.module.css";
 
-export default async function ShowjumpingEventDetails({ params }) {
-  const { eventId } = params; // eventId should be the document ID from Appwrite
+// 👇 This is what Next.js needs to export static pages for dynamic routes
+export async function generateStaticParams() {
+  const events = await getShowjumpingEvents();
 
-  // Fetch stable details using the ID
+  return events.map((event) => ({
+    eventId: event.$id,
+  }));
+}
+
+export default async function ShowjumpingEventDetails({ params }) {
+  const { eventId } = params;
+
   const events = await getShowjumpingEvents();
   const event = events.find((s) => s.$id === eventId);
+
   console.log("Fetching event with ID:", eventId);
 
   if (!event) {
-    return notFound(); // If event is not found, handle it gracefully
+    return notFound();
   }
-  console.log(event);
+
   return (
     <div className={classes.container}>
       <h1 className={classes.title}>{event.eventName}</h1>
-      <EventDescription params={params} />
+      <EventDescription eventId={eventId} />
       <h1 className={classes.title}>მონაწილეები</h1>
       <EventParticipants eventId={eventId} />
       <h1 className={classes.title}>სპონსორები</h1>
-      <EventSponsors />
+      <EventSponsors eventId={eventId} />
     </div>
   );
 }

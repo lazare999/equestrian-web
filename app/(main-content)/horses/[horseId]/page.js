@@ -4,12 +4,21 @@ import HorseCompetitonResults from "@/components/horses/horse-competition-reuslt
 import HorseDescription from "@/components/horses/horse-description/page";
 import HorseSlider from "@/components/horses/horse-slider/page";
 
+// 👇 Required for static export of dynamic routes
+export async function generateStaticParams() {
+  const horses = await getHorses();
+
+  return horses.map((horse) => ({
+    horseId: horse.$id,
+  }));
+}
+
 export default async function HorseDetailsPage({ params }) {
   const { horseId } = params;
 
   const horses = await getHorses();
   const horse = horses.find((h) => h.$id === horseId);
-  console.log(horse);
+
   if (!horse) {
     return <p>ცხენი ვერ მოიძებნა.</p>;
   }
