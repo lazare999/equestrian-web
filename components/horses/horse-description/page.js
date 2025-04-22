@@ -20,33 +20,33 @@ export default function HorseDescription({ horse }) {
           <thead className={classes.tableHeader}>
             <tr>
               <th colSpan="2">
-                <span className={classes.icon}>★</span> Horse Main Info:
+                <span className={classes.icon}>★</span> მთავარი ინფორმაცია:
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Name:</th>
+              <th scope="row">სახელი (Name):</th>
               <td>{horse.name}</td>
             </tr>
             <tr>
-              <th scope="row">Sire:</th>
+              <th scope="row">მამა (Sire):</th>
               <td>{horse.sire}</td>
             </tr>
             <tr>
-              <th scope="row">Damsire:</th>
+              <th scope="row">დედა (Damsire):</th>
               <td>{horse.damsire}</td>
             </tr>
             <tr>
-              <th scope="row">DOB:</th>
+              <th scope="row">დაბადების თარიღი (DOB):</th>
               <td>{horse.dob}</td>
             </tr>
             <tr>
-              <th scope="row">Color:</th>
+              <th scope="row">ფერი (Color):</th>
               <td>{horse.color}</td>
             </tr>
             <tr>
-              <th scope="row">Gender:</th>
+              <th scope="row">სქესი (Gender):</th>
               <td>{horse.gender}</td>
             </tr>
           </tbody>
