@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ShowjumpingEventDetails({ params }) {
-  const { eventId } = params;
+  const { eventId } = await params;
 
   const events = await getShowjumpingEvents();
   const event = events.find((s) => s.$id === eventId);

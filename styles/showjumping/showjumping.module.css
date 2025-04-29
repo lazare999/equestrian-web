@@ -109,6 +109,18 @@
   margin-right: 0.5rem;
 }
 
+.showMoreButton {
+  background: none;
+  border: none;
+  color: #745742;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 16px;
+  display: inline; /* Ensures it stays in the same line */
+  margin-left: 5px;
+}
+
 @media (max-width: 1280px) {
   .title {
     font-size: 3rem;
@@ -143,5 +155,24 @@
     overflow: hidden;
     height: auto;
     margin: 1rem;
+  }
+  .introductionContainer p {
+    font-size: 1rem;
+  }
+
+  .introductionText h3 {
+    font-size: 1rem;
+    color: #745742;
+  }
+
+  .introductionText ul {
+    padding: 1.5rem;
+    font-size: 1rem;
+    color: #ad8f77;
+  }
+
+  .introductionText span {
+    font-weight: bold;
+    margin-right: 0.5rem;
   }
 }

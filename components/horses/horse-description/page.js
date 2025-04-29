@@ -1,8 +1,24 @@
 import HorseImageSlider from "../horse-image-slider/paje";
-
 import classes from "@/styles/horses/horse-description/horseDescription.module.css";
 
+// Helper function to calculate age
+function calculateAge(dobString) {
+  const birthDate = new Date(dobString);
+  const today = new Date();
+
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  return age;
+}
+
 export default function HorseDescription({ horse }) {
+  const age = calculateAge(horse.dob);
+
   return (
     <div className={classes.container}>
       <div className={classes.imageTableWrapper}>
@@ -40,6 +56,10 @@ export default function HorseDescription({ horse }) {
             <tr>
               <th scope="row">დაბადების თარიღი (DOB):</th>
               <td>{horse.dob}</td>
+            </tr>
+            <tr>
+              <th scope="row">ასაკი (Age):</th>
+              <td>{age} წლის</td>
             </tr>
             <tr>
               <th scope="row">ფერი (Color):</th>

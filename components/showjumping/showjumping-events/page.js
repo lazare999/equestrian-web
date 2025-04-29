@@ -48,7 +48,6 @@ export default function ShowjumpingEvents() {
 
   return (
     <div className={classes.container}>
-      <h1 className={classes.title}>Showjumping Events</h1>
       {error && <p className={classes.error}>{error}</p>}
       <Slider options={OPTIONS}>
         {eventData.map((event) => (

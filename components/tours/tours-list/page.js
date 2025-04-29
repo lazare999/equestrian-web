@@ -30,13 +30,6 @@ export default function ToursList() {
     fetchTours();
   }, []);
 
-  // useEffect(() => {
-  //   if (!tours.length) {
-  //     return;
-  //   }
-  //   setImageUrls(tours.map((tour) => tour.tourImages[0]));
-  // }, [tours]);
-
   const handleTourClick = (tour) => {
     router.push(`/tours/${tour.tourKey}`, {
       state: tour,

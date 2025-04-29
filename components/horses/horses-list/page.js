@@ -28,44 +28,44 @@ export default function HorsesList() {
     fetchHorses();
   }, []);
 
-  const handleImageLoad = (horseKey) => {
+  const handleImageLoad = (key) => {
     setImageLoaded((prev) => ({
       ...prev,
-      [horseKey]: true,
+      [key]: true,
     }));
   };
 
   const handleHorseClick = (horse) => {
-    router.push(`/horses/${horse.horseKey}`, {
-      state: horse,
-    });
+    const horseId = horse.horseKey || horse.$id;
+    if (!horseId) return alert("Horse ID missing!");
+    router.push(`/horses/${horseId}`);
   };
 
-  if (loading) return <SkeletonLoader count={2} />;
+  if (loading) return <SkeletonLoader count={4} />;
   if (error) return <p>{error}</p>;
 
   return (
     <div className={classes.container}>
-      {horses.map((horse) => (
-        <div
-          key={horse.horseKey}
-          className={classes.tourCard}
-          onClick={() => handleHorseClick(horse)}
-        >
-          <div className={classes.imageContainer}>
-            {!imageLoaded[horse.horseKey] && <SkeletonLoader count={1} showTextSkeleton={false} />}
-            <img
-              src={horse.images?.[0] || "/no-image.jpg"}
-              alt={`${horse.name} thumbnail`}
-              className={classes.tourImage}
-              onLoad={() => handleImageLoad(horse.horseKey)}
-              style={{ display: imageLoaded[horse.horseKey] ? "block" : "none" }}
-            />
+      {horses.map((horse, index) => {
+        const horseId = horse.horseKey || horse.$id || index;
+
+        return (
+          <div key={horseId} className={classes.tourCard} onClick={() => handleHorseClick(horse)}>
+            <div className={classes.imageContainer}>
+              {!imageLoaded[horseId] && <SkeletonLoader count={1} showTextSkeleton={false} />}
+              <img
+                src={horse.images?.[0] || "/no-image.jpg"}
+                alt={`${horse.name} thumbnail`}
+                className={classes.tourImage}
+                onLoad={() => handleImageLoad(horseId)}
+                style={{ display: imageLoaded[horseId] ? "block" : "none" }}
+              />
+            </div>
+            <h2 className={classes.tourName}>{horse.name}</h2>
+            <p className={classes.tourLocation}>დაბ: {horse.dob}</p>
           </div>
-          <h2 className={classes.tourName}>{horse.name}</h2>
-          <p className={classes.tourLocation}>დაბ: {horse.dob}</p>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
