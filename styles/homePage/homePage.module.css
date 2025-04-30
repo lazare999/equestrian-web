@@ -56,6 +56,13 @@
   line-height: 2rem;
 }
 
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #745742;
+  margin-top: 1rem;
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 1280px) {
   .sliderContainer {
@@ -90,6 +97,9 @@
   .welcomeLetterContainer p {
     font-size: 1.2rem;
   }
+  .title {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -122,5 +132,8 @@
   .welcomeLetterContainer p {
     font-size: 0.9rem;
     line-height: 1.1rem;
+  }
+  .title {
+    font-size: 1rem;
   }
 }

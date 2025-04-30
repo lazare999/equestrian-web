@@ -79,4 +79,10 @@
   .embla__slide {
     min-width: auto;
   }
+  .eventTitle {
+    width: 150px;
+  }
+  .img {
+    width: 150px;
+  }
 }

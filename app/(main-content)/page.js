@@ -1,4 +1,5 @@
 import ShowjumpingEvents from "@/components/showjumping/showjumping-events/page";
+import StableSlider from "@/components/stables/stable-slider/page";
 import classes from "@/styles/homePage/homePage.module.css";
 
 export default function Home() {
@@ -23,7 +24,10 @@ export default function Home() {
           inspire you — your adventure starts here!
         </p>
       </div>
+      <h1 className={classes.title}>შეჯიბრები დაბრკოლებათა გადალახვაში</h1>
       <ShowjumpingEvents />
+      <h1 className={classes.title}>თავლები</h1>
+      <StableSlider />
     </div>
   );
 }
